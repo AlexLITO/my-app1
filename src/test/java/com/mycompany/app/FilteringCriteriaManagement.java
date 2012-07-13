@@ -17,19 +17,25 @@ public class FilteringCriteriaManagement {
         new WebDriverWait(driver, 10);
 
         //Filtering Criteria Management actions
-        WebElement FCMButton= driver.findElement(By.id("j_idt9:j_idt18"));
+        WebElement FCMButton= driver.findElement(By.id("j_idt11:j_idt20"));
         FCMButton.click();
+        driver.get("http://192.168.32.41:8080/audit/pages/filter/criteria/editFilteringCriterion.jsf");
+        //new WebDriverWait(driver, 10);
+        //WebElement ANFCButton = driver.findElement(By.xpath("//*[@id="j_idt27:j_idt28"]/span"));
+        //WebElement ANFCButton = driver.findElement(By.id("j_idt27:j_idt28"));
+        //ANFCButton.click();
         new WebDriverWait(driver, 10);
-        WebElement ANFCButton = driver.findElement(By.name("j_idt27:j_idt28"));
-        ANFCButton.click();
-        new WebDriverWait(driver, 10);
-        WebElement FilterNameField = driver.findElement(By.id("filteringCriterion:filterName"));
+        WebElement FilterNameField = driver.findElement(By.xpath("//*[@id=\"filteringCriterion:filterName\"]"));
+        //WebElement FilterNameField = driver.findElement(By.id("filteringCriterion:filterName"));
         FilterNameField.sendKeys("AlexLITO");
-        WebElement ExpressionField = driver.findElement(By.id("filteringCriterion:j_idt32"));
+        WebElement ExpressionField = driver.findElement(By.xpath("//*[@id=\"filteringCriterion:j_idt35\"]"));
+        //WebElement ExpressionField = driver.findElement(By.id("filteringCriterion:j_idt32"));
         ExpressionField.sendKeys("AlexLITO and Zebra");
-        WebElement TestFilterXMLField = driver.findElement(By.id("filteringCriterion:testFilterXml"));
+        WebElement TestFilterXMLField = driver.findElement(By.xpath("//*[@id=\"filteringCriterion:testFilterXml\"]"));
+        //WebElement TestFilterXMLField = driver.findElement(By.id("filteringCriterion:testFilterXml"));
         TestFilterXMLField.sendKeys("123321");
-        WebElement SaveButton = driver.findElement(By.id("filteringCriterion:j_idt37"));
+        WebElement SaveButton = driver.findElement(By.xpath("//*[@id=\"filteringCriterion:j_idt40\"]"));
+        //WebElement SaveButton = driver.findElement(By.id("filteringCriterion:j_idt37"));
         SaveButton.click();
         new WebDriverWait(driver, 10);
         System.out.println("Page title is: " + driver.getTitle());
