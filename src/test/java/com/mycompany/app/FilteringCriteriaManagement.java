@@ -1,5 +1,6 @@
 package com.mycompany.app;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,9 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FilteringCriteriaManagement {
 
-    @Test
+
+
+        @Test
     public void google() throws Exception {
-        WebDriver driver = new FirefoxDriver();
+                 for( ; ; )
+                    {WebDriver driver = new FirefoxDriver();
 
         driver.get("http://192.168.32.41:8080/audit/");
         new WebDriverWait(driver, 10);
@@ -38,9 +42,17 @@ public class FilteringCriteriaManagement {
         //WebElement SaveButton = driver.findElement(By.id("filteringCriterion:j_idt37"));
         SaveButton.click();
         new WebDriverWait(driver, 10);
-        System.out.println("Page title is: " + driver.getTitle());
+        //System.out.println("Page title is:" + driver.getTitle());
+                        Assert.IsTrue(driver.PageSource.Contains("AlexLITO"));
 
-        //Close the browser
+
+
+
+
+
+                        //Close the browser
         driver.quit();
     }
+    }
 }
+
