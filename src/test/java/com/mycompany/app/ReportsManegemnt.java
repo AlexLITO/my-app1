@@ -24,28 +24,21 @@ public class ReportsManegemnt {
             driver.get("http://192.168.32.41:8080/audit/");
             new WebDriverWait(driver, 10);
             Actions actions = new Actions(driver);
-            WebElement drag = driver.findElement(By.xpath("//*[@id=\"j_idt11:j_idt15\"]/ul/li[2]"));
+            WebElement drag = driver.findElement(By.xpath("//*[@id='j_idt11:j_idt15']"));
             WebElement to = driver.findElement(By.id("j_idt11:j_idt18"));
             actions.dragAndDrop(drag, to);
             actions.perform();
-
             driver.get("http://192.168.32.41:8080/audit/pages/report/reportGeneration.jsf");
-        new WebDriverWait(driver, 10);
-
-
-        WebElement Design1 = driver.findElement(By.id("reportGeneration:j_idt29"));
-        Design1.click();
-        WebElement Design2 = driver.findElement(By.xpath("//*[@id=\"reportGeneration:j_idt29_panel\"]/ul/li[3]"));
-        Design2.click();
-        WebElement inputName = driver.findElement(By.id("reportGeneration:searchFilterName"));
-        inputName.sendKeys("AlexLITO");
-        WebElement ButtonGen = driver.findElement(By.id("reportGeneration:runReportButton"));
-        ButtonGen.click();
-        new WebDriverWait(driver, 30);
-
-        driver.get("http://192.168.32.41:8080/audit/pages/report/reports.jsf");
-        new WebDriverWait(driver,10);
-        new WebDriverWait(driver, 30);
+            new WebDriverWait(driver, 10);
+            driver.findElement(By.xpath("//*[@id='reportGeneration']")).click();
+            driver.findElement(By.id("reportGeneration:searchFilterName")).sendKeys("AlexLITO");
+            driver.findElement(By.id("reportGeneration:runReportButton")).click();
+            new WebDriverWait(driver,1000);
+            driver.findElement(By.xpath("//*[@id='reportGeneration']")).click();
+                new WebDriverWait(driver,1000);
+            driver.findElement(By.xpath("//*[@id='j_idt17']")).click();
+            new WebDriverWait(driver,10);
+            new WebDriverWait(driver, 30);
 
 
 
@@ -61,10 +54,15 @@ public class ReportsManegemnt {
 
 
 
-            }
+
+
+
+
+
 
         //Close the browser
             driver.quit();
         }
     }
 
+}
